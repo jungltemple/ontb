@@ -1,3 +1,36 @@
+---
+import "@/styles/globals.css"
+import '@fontsource/geist-sans/latin-100.css';
+import '@fontsource/geist-sans/latin-200.css';
+import '@fontsource/geist-sans/latin-300.css';
+import '@fontsource/geist-sans/latin-400.css';
+import '@fontsource/geist-sans/latin-500.css';
+import '@fontsource/geist-sans/latin-600.css';
+import '@fontsource/geist-sans/latin-700.css';
+import '@fontsource/geist-sans/latin-800.css';
+import '@fontsource/geist-sans/latin-900.css';
+import { ModeToggle } from "@/components/ModeToggle";
+---
+
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +38,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>ONTB</title>
 	</head>
 	<body>
+		<div class="fixed top-3 left-3 z-50">
+			<!-- <div class="flex flex-row gap-1 border border-input bg-background shadow-sm p-1 rounded-lg"> -->
+			<div class="flex flex-row gap-1">
+				<ModeToggle client:load />
+				<!-- <a href="/ranks" class={buttonVariants({ variant: "outline" })}>Ranks</a> -->
+			</div>
+		</div>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

@@ -1,11 +1,90 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import RetroGrid from '@/components/ui/retro-grid';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<div class="pb-10">
+		<div class="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background md:shadow-xl">
+			<h1 class="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-9xl font-bold leading-none tracking-tighter text-transparent">ONTB</h1>
+			<p>The best team on the <a class="dark:text-emerald-400 text-sky-600 hover:dark:text-emerald-500 hover:text-sky-800 underline" href="https://teamsmp.pages.dev/">Team SMP</a></p>
+			<RetroGrid />
+		</div>
+		<div class="mt-6 mx-8">
+			<h2 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-6xl">Ranks</h2>
+			<p class="mb-6 lg:max-w-xl">You can progress through these ranks in ONTB by completing missions. Your level of armour trim describes your rank. Here they are:</p>
+			<div class="flex flex-col lg:grid lg:grid-cols-5 gap-3 w-full">
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/empty.svg" alt="Empty armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">BLANK</h3>
+						<p>The lowest rank available</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/copper.svg" alt="Copper armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">COPPER</h3>
+						<p>The second lowest rank</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/iron.svg" alt="Iron armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">IRON</h3>
+						<p>The medium rank</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/amethyst.svg" alt="Amethyst armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">AMETHYST</h3>
+						<p>The decent rank</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/gold.svg" alt="Gold armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">GOLD</h3>
+						<p>The high rank</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/emerald.svg" alt="Emerald armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">EMERALD</h3>
+						<p>The great rank</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/diamond-1.svg" alt="1 Diamond armour trim" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">OFFICER</h3>
+						<p>A leader rank, with 1 diamond trim</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/diamond-2.svg" alt="2 Diamond armour trims" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">GENERAL</h3>
+						<p>Another leader rank, with 2 diamond trims</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/diamond-3.svg" alt="3 Diamond armour trims" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">ADMIN</h3>
+						<p>A high leader rank, with 3 diamond trims</p>
+					</div>
+				</div>
+				<div class="flex flex-row gap-3">
+					<img src="/assets/trims/diamond-4.svg" alt="4 Diamond armour trims" loading="lazy" class="h-24">
+					<div>
+						<h3 class="scroll-m-20 text-4xl italic font-black tracking-tight mb-1">OWNER</h3>
+						<p>The highest leader rank, with 4 diamond trims</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>
